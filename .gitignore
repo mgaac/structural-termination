@@ -1,0 +1,9 @@
+data/
+runs/
+checkpoints/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+*.pyc
+*.npz
