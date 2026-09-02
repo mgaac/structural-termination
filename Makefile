@@ -28,4 +28,4 @@ locked:
 	$(RUN) python -m src.analysis.locked_termination_experiment
 
 locked-plot:
-	$(RUN) python -m src.analysis.plot_locked_results
+	$(RUN) python -m src.analysis.plot_latent_trajectory_pca

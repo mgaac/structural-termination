@@ -14,6 +14,7 @@ from src.utils.termination import (
 def test_analysis_entry_points_import() -> None:
     for module_name in (
         "src.analysis.latent_convergence",
+        "src.analysis.plot_latent_trajectory_pca",
         "src.analysis.termination_threshold_sweep",
     ):
         importlib.import_module(module_name)

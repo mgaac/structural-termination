@@ -107,5 +107,19 @@ def test_readme_headline_values_are_fixed() -> None:
         assert displayed_value in readme
 
 
-def test_locked_summary_figure_exists() -> None:
-    assert (ROOT / "figures" / "locked_multiseed_summary.png").is_file()
+def test_latent_trajectory_figure_contract() -> None:
+    assert (ROOT / "figures" / "latent_trajectory_pca.png").is_file()
+    source = json.loads(
+        (RESULTS / "latent_trajectory_pca_seed11.json").read_text()
+    )
+    assert source["checkpoint_step"] == 100
+    assert source["model_seed"] == 11
+    assert source["split"] == "test_id"
+    assert source["graphs"] == 200
+    assert source["nodes"] == 20
+    assert source["rollout"] == "autoregressive"
+    assert source["pca_input"] == "mean-pooled processed state"
+    assert len(source["displayed_graph_indices"]) == 12
+    assert source["distance_by_step"][0]["n"] == 200
+    assert source["distance_by_step"][0]["median"] > 2.5
+    assert source["distance_by_step"][3]["median"] < 0.11

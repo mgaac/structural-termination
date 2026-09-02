@@ -33,4 +33,3 @@ jobs:
       - run: python -m pytest -q
       - run: python -m src.reproduce reference
       - run: python -m src.reproduce smoke
-      - run: python -m src.analysis.plot_locked_results
