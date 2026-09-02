@@ -1,0 +1,869 @@
+{
+  "seed": 22,
+  "checkpoint_step": 100,
+  "rollout_mode": "autoregressive",
+  "termination_supervision": {
+    "enabled": true,
+    "weight": 1.0,
+    "balanced": true
+  },
+  "distance_metrics": {
+    "rms": {
+      "selection": {
+        "bf": {
+          "threshold": 0.11337709799408913,
+          "fixed_step": 4,
+          "validation": {
+            "distance": {
+              "classification": {
+                "tp": 194,
+                "tn": 678,
+                "fp": 116,
+                "fn": 6,
+                "accuracy": 0.8772635814889336,
+                "balanced_accuracy": 0.9119521410579345,
+                "precision": 0.6258064516129033,
+                "recall": 0.97,
+                "specificity": 0.853904282115869,
+                "f1": 0.7607843137254902
+              },
+              "stopping": {
+                "mean_signed_error": -0.55,
+                "mean_absolute_error": 0.61,
+                "exact_stop_accuracy": 0.45,
+                "early_stop_rate": 0.52,
+                "late_or_missing_stop_rate": 0.03
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 794,
+                "fp": 0,
+                "fn": 200,
+                "accuracy": 0.7987927565392354,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 103,
+                "tn": 751,
+                "fp": 43,
+                "fn": 97,
+                "accuracy": 0.8591549295774648,
+                "balanced_accuracy": 0.7304219143576827,
+                "precision": 0.7054794520547946,
+                "recall": 0.515,
+                "specificity": 0.9458438287153652,
+                "f1": 0.5953757225433526
+              },
+              "stopping": {
+                "mean_signed_error": 0.015,
+                "mean_absolute_error": 0.525,
+                "exact_stop_accuracy": 0.515,
+                "early_stop_rate": 0.215,
+                "late_or_missing_stop_rate": 0.27
+              }
+            }
+          }
+        },
+        "bfs": {
+          "threshold": 0.43571779131889343,
+          "fixed_step": 2,
+          "validation": {
+            "distance": {
+              "classification": {
+                "tp": 190,
+                "tn": 466,
+                "fp": 11,
+                "fn": 9,
+                "accuracy": 0.9704142011834319,
+                "balanced_accuracy": 0.9658565363505157,
+                "precision": 0.945273631840796,
+                "recall": 0.9547738693467337,
+                "specificity": 0.9769392033542977,
+                "f1": 0.95
+              },
+              "stopping": {
+                "mean_signed_error": -0.010050251256281407,
+                "mean_absolute_error": 0.10050251256281408,
+                "exact_stop_accuracy": 0.9095477386934674,
+                "early_stop_rate": 0.04522613065326633,
+                "late_or_missing_stop_rate": 0.04522613065326633
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 477,
+                "fp": 0,
+                "fn": 199,
+                "accuracy": 0.7056213017751479,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 118,
+                "tn": 405,
+                "fp": 72,
+                "fn": 81,
+                "accuracy": 0.7736686390532544,
+                "balanced_accuracy": 0.721010713947094,
+                "precision": 0.6210526315789474,
+                "recall": 0.592964824120603,
+                "specificity": 0.8490566037735849,
+                "f1": 0.6066838046272494
+              },
+              "stopping": {
+                "mean_signed_error": -0.3969849246231156,
+                "mean_absolute_error": 0.48743718592964824,
+                "exact_stop_accuracy": 0.592964824120603,
+                "early_stop_rate": 0.36180904522613067,
+                "late_or_missing_stop_rate": 0.04522613065326633
+              }
+            }
+          }
+        }
+      },
+      "test": {
+        "test_id": {
+          "bf": {
+            "distance": {
+              "classification": {
+                "tp": 189,
+                "tn": 686,
+                "fp": 107,
+                "fn": 11,
+                "accuracy": 0.8811681772406847,
+                "balanced_accuracy": 0.9050346784363177,
+                "precision": 0.6385135135135135,
+                "recall": 0.945,
+                "specificity": 0.8650693568726355,
+                "f1": 0.7620967741935484
+              },
+              "stopping": {
+                "mean_signed_error": -0.48,
+                "mean_absolute_error": 0.59,
+                "exact_stop_accuracy": 0.47,
+                "early_stop_rate": 0.475,
+                "late_or_missing_stop_rate": 0.055
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 793,
+                "fp": 0,
+                "fn": 200,
+                "accuracy": 0.798590130916415,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 104,
+                "tn": 746,
+                "fp": 47,
+                "fn": 96,
+                "accuracy": 0.8559919436052367,
+                "balanced_accuracy": 0.7303656998738965,
+                "precision": 0.6887417218543046,
+                "recall": 0.52,
+                "specificity": 0.9407313997477932,
+                "f1": 0.5925925925925926
+              },
+              "stopping": {
+                "mean_signed_error": -0.06,
+                "mean_absolute_error": 0.55,
+                "exact_stop_accuracy": 0.52,
+                "early_stop_rate": 0.235,
+                "late_or_missing_stop_rate": 0.245
+              }
+            }
+          },
+          "bfs": {
+            "distance": {
+              "classification": {
+                "tp": 184,
+                "tn": 478,
+                "fp": 12,
+                "fn": 12,
+                "accuracy": 0.9650145772594753,
+                "balanced_accuracy": 0.9571428571428572,
+                "precision": 0.9387755102040817,
+                "recall": 0.9387755102040817,
+                "specificity": 0.9755102040816327,
+                "f1": 0.9387755102040817
+              },
+              "stopping": {
+                "mean_signed_error": 0,
+                "mean_absolute_error": 0.12244897959183673,
+                "exact_stop_accuracy": 0.8826530612244898,
+                "early_stop_rate": 0.05612244897959184,
+                "late_or_missing_stop_rate": 0.061224489795918366
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 490,
+                "fp": 0,
+                "fn": 196,
+                "accuracy": 0.7142857142857143,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 92,
+                "tn": 397,
+                "fp": 93,
+                "fn": 104,
+                "accuracy": 0.7128279883381924,
+                "balanced_accuracy": 0.639795918367347,
+                "precision": 0.4972972972972973,
+                "recall": 0.46938775510204084,
+                "specificity": 0.810204081632653,
+                "f1": 0.48293963254593175
+              },
+              "stopping": {
+                "mean_signed_error": -0.5102040816326531,
+                "mean_absolute_error": 0.6224489795918368,
+                "exact_stop_accuracy": 0.46938775510204084,
+                "early_stop_rate": 0.4744897959183674,
+                "late_or_missing_stop_rate": 0.05612244897959184
+              }
+            }
+          }
+        },
+        "test_ood": {
+          "bf": {
+            "distance": {
+              "classification": {
+                "tp": 100,
+                "tn": 369,
+                "fp": 128,
+                "fn": 0,
+                "accuracy": 0.7855946398659966,
+                "balanced_accuracy": 0.8712273641851107,
+                "precision": 0.43859649122807015,
+                "recall": 1.0,
+                "specificity": 0.7424547283702213,
+                "f1": 0.6097560975609756
+              },
+              "stopping": {
+                "mean_signed_error": -1.28,
+                "mean_absolute_error": 1.28,
+                "exact_stop_accuracy": 0.2,
+                "early_stop_rate": 0.8,
+                "late_or_missing_stop_rate": 0
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 497,
+                "fp": 0,
+                "fn": 100,
+                "accuracy": 0.8324958123953099,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 31,
+                "tn": 448,
+                "fp": 49,
+                "fn": 69,
+                "accuracy": 0.8023450586264657,
+                "balanced_accuracy": 0.6057042253521127,
+                "precision": 0.3875,
+                "recall": 0.31,
+                "specificity": 0.9014084507042254,
+                "f1": 0.34444444444444444
+              },
+              "stopping": {
+                "mean_signed_error": -0.97,
+                "mean_absolute_error": 1.37,
+                "exact_stop_accuracy": 0.31,
+                "early_stop_rate": 0.49,
+                "late_or_missing_stop_rate": 0.2
+              }
+            }
+          },
+          "bfs": {
+            "distance": {
+              "classification": {
+                "tp": 50,
+                "tn": 218,
+                "fp": 36,
+                "fn": 50,
+                "accuracy": 0.7570621468926554,
+                "balanced_accuracy": 0.6791338582677166,
+                "precision": 0.5813953488372093,
+                "recall": 0.5,
+                "specificity": 0.8582677165354331,
+                "f1": 0.5376344086021505
+              },
+              "stopping": {
+                "mean_signed_error": 0.14,
+                "mean_absolute_error": 0.86,
+                "exact_stop_accuracy": 0.14,
+                "early_stop_rate": 0.36,
+                "late_or_missing_stop_rate": 0.5
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 254,
+                "fp": 0,
+                "fn": 100,
+                "accuracy": 0.7175141242937854,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 1,
+                "tn": 205,
+                "fp": 49,
+                "fn": 99,
+                "accuracy": 0.5819209039548022,
+                "balanced_accuracy": 0.4085433070866142,
+                "precision": 0.02,
+                "recall": 0.01,
+                "specificity": 0.8070866141732284,
+                "f1": 0.013333333333333334
+              },
+              "stopping": {
+                "mean_signed_error": -0.54,
+                "mean_absolute_error": 1.54,
+                "exact_stop_accuracy": 0.01,
+                "early_stop_rate": 0.49,
+                "late_or_missing_stop_rate": 0.5
+              }
+            }
+          }
+        }
+      }
+    },
+    "mean_nodewise_l2": {
+      "selection": {
+        "bf": {
+          "threshold": 0.8156400322914124,
+          "fixed_step": 4,
+          "validation": {
+            "distance": {
+              "classification": {
+                "tp": 199,
+                "tn": 667,
+                "fp": 127,
+                "fn": 1,
+                "accuracy": 0.8712273641851107,
+                "balanced_accuracy": 0.9175251889168765,
+                "precision": 0.6104294478527608,
+                "recall": 0.995,
+                "specificity": 0.8400503778337531,
+                "f1": 0.7566539923954373
+              },
+              "stopping": {
+                "mean_signed_error": -0.63,
+                "mean_absolute_error": 0.64,
+                "exact_stop_accuracy": 0.43,
+                "early_stop_rate": 0.565,
+                "late_or_missing_stop_rate": 0.005
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 794,
+                "fp": 0,
+                "fn": 200,
+                "accuracy": 0.7987927565392354,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 103,
+                "tn": 751,
+                "fp": 43,
+                "fn": 97,
+                "accuracy": 0.8591549295774648,
+                "balanced_accuracy": 0.7304219143576827,
+                "precision": 0.7054794520547946,
+                "recall": 0.515,
+                "specificity": 0.9458438287153652,
+                "f1": 0.5953757225433526
+              },
+              "stopping": {
+                "mean_signed_error": 0.015,
+                "mean_absolute_error": 0.525,
+                "exact_stop_accuracy": 0.515,
+                "early_stop_rate": 0.215,
+                "late_or_missing_stop_rate": 0.27
+              }
+            }
+          }
+        },
+        "bfs": {
+          "threshold": 3.0388407707214355,
+          "fixed_step": 2,
+          "validation": {
+            "distance": {
+              "classification": {
+                "tp": 189,
+                "tn": 458,
+                "fp": 19,
+                "fn": 10,
+                "accuracy": 0.9571005917159763,
+                "balanced_accuracy": 0.9549582293016445,
+                "precision": 0.9086538461538461,
+                "recall": 0.949748743718593,
+                "specificity": 0.960167714884696,
+                "f1": 0.9287469287469288
+              },
+              "stopping": {
+                "mean_signed_error": -0.04522613065326633,
+                "mean_absolute_error": 0.1457286432160804,
+                "exact_stop_accuracy": 0.8693467336683417,
+                "early_stop_rate": 0.08040201005025126,
+                "late_or_missing_stop_rate": 0.05025125628140704
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 477,
+                "fp": 0,
+                "fn": 199,
+                "accuracy": 0.7056213017751479,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 118,
+                "tn": 405,
+                "fp": 72,
+                "fn": 81,
+                "accuracy": 0.7736686390532544,
+                "balanced_accuracy": 0.721010713947094,
+                "precision": 0.6210526315789474,
+                "recall": 0.592964824120603,
+                "specificity": 0.8490566037735849,
+                "f1": 0.6066838046272494
+              },
+              "stopping": {
+                "mean_signed_error": -0.3969849246231156,
+                "mean_absolute_error": 0.48743718592964824,
+                "exact_stop_accuracy": 0.592964824120603,
+                "early_stop_rate": 0.36180904522613067,
+                "late_or_missing_stop_rate": 0.04522613065326633
+              }
+            }
+          }
+        }
+      },
+      "test": {
+        "test_id": {
+          "bf": {
+            "distance": {
+              "classification": {
+                "tp": 191,
+                "tn": 658,
+                "fp": 135,
+                "fn": 9,
+                "accuracy": 0.8549848942598187,
+                "balanced_accuracy": 0.8923802017654476,
+                "precision": 0.5858895705521472,
+                "recall": 0.955,
+                "specificity": 0.8297604035308953,
+                "f1": 0.7262357414448669
+              },
+              "stopping": {
+                "mean_signed_error": -0.63,
+                "mean_absolute_error": 0.72,
+                "exact_stop_accuracy": 0.36,
+                "early_stop_rate": 0.595,
+                "late_or_missing_stop_rate": 0.045
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 793,
+                "fp": 0,
+                "fn": 200,
+                "accuracy": 0.798590130916415,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 104,
+                "tn": 746,
+                "fp": 47,
+                "fn": 96,
+                "accuracy": 0.8559919436052367,
+                "balanced_accuracy": 0.7303656998738965,
+                "precision": 0.6887417218543046,
+                "recall": 0.52,
+                "specificity": 0.9407313997477932,
+                "f1": 0.5925925925925926
+              },
+              "stopping": {
+                "mean_signed_error": -0.06,
+                "mean_absolute_error": 0.55,
+                "exact_stop_accuracy": 0.52,
+                "early_stop_rate": 0.235,
+                "late_or_missing_stop_rate": 0.245
+              }
+            }
+          },
+          "bfs": {
+            "distance": {
+              "classification": {
+                "tp": 184,
+                "tn": 465,
+                "fp": 25,
+                "fn": 12,
+                "accuracy": 0.9460641399416909,
+                "balanced_accuracy": 0.9438775510204083,
+                "precision": 0.8803827751196173,
+                "recall": 0.9387755102040817,
+                "specificity": 0.9489795918367347,
+                "f1": 0.908641975308642
+              },
+              "stopping": {
+                "mean_signed_error": -0.0663265306122449,
+                "mean_absolute_error": 0.18877551020408162,
+                "exact_stop_accuracy": 0.826530612244898,
+                "early_stop_rate": 0.11224489795918367,
+                "late_or_missing_stop_rate": 0.061224489795918366
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 490,
+                "fp": 0,
+                "fn": 196,
+                "accuracy": 0.7142857142857143,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 92,
+                "tn": 397,
+                "fp": 93,
+                "fn": 104,
+                "accuracy": 0.7128279883381924,
+                "balanced_accuracy": 0.639795918367347,
+                "precision": 0.4972972972972973,
+                "recall": 0.46938775510204084,
+                "specificity": 0.810204081632653,
+                "f1": 0.48293963254593175
+              },
+              "stopping": {
+                "mean_signed_error": -0.5102040816326531,
+                "mean_absolute_error": 0.6224489795918368,
+                "exact_stop_accuracy": 0.46938775510204084,
+                "early_stop_rate": 0.4744897959183674,
+                "late_or_missing_stop_rate": 0.05612244897959184
+              }
+            }
+          }
+        },
+        "test_ood": {
+          "bf": {
+            "distance": {
+              "classification": {
+                "tp": 100,
+                "tn": 366,
+                "fp": 131,
+                "fn": 0,
+                "accuracy": 0.7805695142378559,
+                "balanced_accuracy": 0.8682092555331993,
+                "precision": 0.4329004329004329,
+                "recall": 1.0,
+                "specificity": 0.7364185110663984,
+                "f1": 0.6042296072507553
+              },
+              "stopping": {
+                "mean_signed_error": -1.31,
+                "mean_absolute_error": 1.31,
+                "exact_stop_accuracy": 0.2,
+                "early_stop_rate": 0.8,
+                "late_or_missing_stop_rate": 0
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 497,
+                "fp": 0,
+                "fn": 100,
+                "accuracy": 0.8324958123953099,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 31,
+                "tn": 448,
+                "fp": 49,
+                "fn": 69,
+                "accuracy": 0.8023450586264657,
+                "balanced_accuracy": 0.6057042253521127,
+                "precision": 0.3875,
+                "recall": 0.31,
+                "specificity": 0.9014084507042254,
+                "f1": 0.34444444444444444
+              },
+              "stopping": {
+                "mean_signed_error": -0.97,
+                "mean_absolute_error": 1.37,
+                "exact_stop_accuracy": 0.31,
+                "early_stop_rate": 0.49,
+                "late_or_missing_stop_rate": 0.2
+              }
+            }
+          },
+          "bfs": {
+            "distance": {
+              "classification": {
+                "tp": 50,
+                "tn": 213,
+                "fp": 41,
+                "fn": 50,
+                "accuracy": 0.7429378531073446,
+                "balanced_accuracy": 0.6692913385826771,
+                "precision": 0.5494505494505495,
+                "recall": 0.5,
+                "specificity": 0.8385826771653543,
+                "f1": 0.5235602094240838
+              },
+              "stopping": {
+                "mean_signed_error": 0.09,
+                "mean_absolute_error": 0.91,
+                "exact_stop_accuracy": 0.11,
+                "early_stop_rate": 0.39,
+                "late_or_missing_stop_rate": 0.5
+              }
+            },
+            "always_continue": {
+              "classification": {
+                "tp": 0,
+                "tn": 254,
+                "fp": 0,
+                "fn": 100,
+                "accuracy": 0.7175141242937854,
+                "balanced_accuracy": 0.5,
+                "precision": 0.0,
+                "recall": 0.0,
+                "specificity": 1.0,
+                "f1": 0.0
+              },
+              "stopping": {
+                "mean_signed_error": 1,
+                "mean_absolute_error": 1,
+                "exact_stop_accuracy": 0,
+                "early_stop_rate": 0,
+                "late_or_missing_stop_rate": 1
+              }
+            },
+            "fixed_step": {
+              "classification": {
+                "tp": 1,
+                "tn": 205,
+                "fp": 49,
+                "fn": 99,
+                "accuracy": 0.5819209039548022,
+                "balanced_accuracy": 0.4085433070866142,
+                "precision": 0.02,
+                "recall": 0.01,
+                "specificity": 0.8070866141732284,
+                "f1": 0.013333333333333334
+              },
+              "stopping": {
+                "mean_signed_error": -0.54,
+                "mean_absolute_error": 1.54,
+                "exact_stop_accuracy": 0.01,
+                "early_stop_rate": 0.49,
+                "late_or_missing_stop_rate": 0.5
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "task_metrics": {
+    "val": {
+      "loss": 1.4814549684524536,
+      "losses/bf_distance": 0.003952905535697937,
+      "losses/bf_predecessor": 0.25074654817581177,
+      "losses/bf_termination": 0.7943575978279114,
+      "losses/bfs_state": 0.003164848778396845,
+      "losses/bfs_termination": 0.6328990459442139,
+      "acc/bf_distance": 0.907362163066864,
+      "acc/bf_predecessor": 0.879059910774231,
+      "acc/bf_termination": 0.8286792635917664,
+      "acc/bfs_state": 0.9950000047683716,
+      "acc/bfs_termination": 0.7574521899223328
+    },
+    "test_id": {
+      "loss": 1.5374815464019775,
+      "losses/bf_distance": 0.0039149741642177105,
+      "losses/bf_predecessor": 0.2563297748565674,
+      "losses/bf_termination": 0.8254489302635193,
+      "losses/bfs_state": 0.0032132670748978853,
+      "losses/bfs_termination": 0.6525819897651672,
+      "acc/bf_distance": 0.9059638381004333,
+      "acc/bf_predecessor": 0.8744204044342041,
+      "acc/bf_termination": 0.7996078729629517,
+      "acc/bfs_state": 0.9799500107765198,
+      "acc/bfs_termination": 0.7808334827423096
+    },
+    "test_ood": {
+      "loss": 2.3014588356018066,
+      "losses/bf_distance": 0.010321114212274551,
+      "losses/bf_predecessor": 0.8939492106437683,
+      "losses/bf_termination": 0.8409304618835449,
+      "losses/bfs_state": 0.0063530937768518925,
+      "losses/bfs_termination": 1.0383741855621338,
+      "acc/bf_distance": 0.6800225973129272,
+      "acc/bf_predecessor": 0.6493502259254456,
+      "acc/bf_termination": 0.6673292517662048,
+      "acc/bfs_state": 0.9999833703041077,
+      "acc/bfs_termination": 0.7238333225250244
+    }
+  }
+}

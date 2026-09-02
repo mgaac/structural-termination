@@ -28,6 +28,7 @@ from src.analysis.common import (
     resolve_checkpoint_path,
     resolve_config,
     resolve_dataset_path,
+    portable_path,
 )
 from src.model import NGE
 from src.utils.task_specs import (
@@ -548,7 +549,7 @@ def main() -> None:
         "extra_steps": args.extra_steps,
         "converge_threshold": args.converge_threshold,
         "converge_patience": args.converge_patience,
-        "dataset": str(dataset_path),
+        "dataset": portable_path(dataset_path),
         "split": args.split if args.dataset is None else None,
         "num_graphs": len(graphs),
         "terminal_probe_definition": "distance from final analyzed latent to one extra terminal-target forward pass",

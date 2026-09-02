@@ -1,0 +1,2933 @@
+{
+  "protocol": "validation-locked-v1",
+  "seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "num_seeds": 5,
+  "scalar_summary": {
+    "checkpoint_step": {
+      "mean": 100.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.fixed_step": {
+      "mean": 4.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.threshold": {
+      "mean": 0.7042874276638031,
+      "std": 0.06979684333014714,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.accuracy": {
+      "mean": 0.7987927565392354,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.fn": {
+      "mean": 200.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.tn": {
+      "mean": 794.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.accuracy": {
+      "mean": 0.8867203219315896,
+      "std": 0.010175398638623937,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.balanced_accuracy": {
+      "mean": 0.925352644836272,
+      "std": 0.005247968926310326,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.f1": {
+      "mean": 0.7788755292352703,
+      "std": 0.01463492556040902,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.fn": {
+      "mean": 2.0,
+      "std": 1.4142135623730951,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.fp": {
+      "mean": 110.6,
+      "std": 11.013627921806693,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.precision": {
+      "mean": 0.6422710559117482,
+      "std": 0.021518773884250327,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.recall": {
+      "mean": 0.99,
+      "std": 0.007071067811865481,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.specificity": {
+      "mean": 0.8607052896725441,
+      "std": 0.013871067911595333,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.tn": {
+      "mean": 683.4,
+      "std": 11.013627921806693,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.classification.tp": {
+      "mean": 198.0,
+      "std": 1.4142135623730951,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.stopping.early_stop_rate": {
+      "mean": 0.505,
+      "std": 0.03984344362627305,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.485,
+      "std": 0.03553167600887975,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.01,
+      "std": 0.007071067811865475,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.stopping.mean_absolute_error": {
+      "mean": 0.5630000000000001,
+      "std": 0.05057173123396112,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.distance.stopping.mean_signed_error": {
+      "mean": -0.543,
+      "std": 0.060062467481781,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.accuracy": {
+      "mean": 0.8591549295774648,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.7304219143576827,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.f1": {
+      "mean": 0.5953757225433526,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.fn": {
+      "mean": 97.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.fp": {
+      "mean": 43.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.precision": {
+      "mean": 0.7054794520547946,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.recall": {
+      "mean": 0.515,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.specificity": {
+      "mean": 0.9458438287153652,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.tn": {
+      "mean": 751.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.classification.tp": {
+      "mean": 103.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.215,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.515,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.27,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.stopping.mean_absolute_error": {
+      "mean": 0.525,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bf.validation.fixed_step.stopping.mean_signed_error": {
+      "mean": 0.015,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.fixed_step": {
+      "mean": 2.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.threshold": {
+      "mean": 3.097094917297363,
+      "std": 0.1832172646716178,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.accuracy": {
+      "mean": 0.7056213017751479,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.fn": {
+      "mean": 199.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.tn": {
+      "mean": 477.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.accuracy": {
+      "mean": 0.957396449704142,
+      "std": 0.00656578136721071,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.balanced_accuracy": {
+      "mean": 0.9557536108214026,
+      "std": 0.005331639573691234,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.f1": {
+      "mean": 0.9294157166336826,
+      "std": 0.0102548088920113,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.fn": {
+      "mean": 9.6,
+      "std": 0.8944271909999159,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.fp": {
+      "mean": 19.2,
+      "std": 4.147288270665544,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.precision": {
+      "mean": 0.9082286505283512,
+      "std": 0.01806449224192938,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.recall": {
+      "mean": 0.9517587939698493,
+      "std": 0.004494608999999597,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.specificity": {
+      "mean": 0.959748427672956,
+      "std": 0.008694524676447709,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.tn": {
+      "mean": 457.8,
+      "std": 4.147288270665544,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.classification.tp": {
+      "mean": 189.4,
+      "std": 0.8944271909999159,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.stopping.early_stop_rate": {
+      "mean": 0.08241206030150754,
+      "std": 0.019332044283086783,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.8693467336683417,
+      "std": 0.020719123746822415,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.04824120603015076,
+      "std": 0.004494608999999578,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.stopping.mean_absolute_error": {
+      "mean": 0.14472361809045226,
+      "std": 0.022303860322786074,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.distance.stopping.mean_signed_error": {
+      "mean": -0.04824120603015075,
+      "std": 0.020288069586116935,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.accuracy": {
+      "mean": 0.7736686390532544,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.721010713947094,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.f1": {
+      "mean": 0.6066838046272494,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.fn": {
+      "mean": 81.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.fp": {
+      "mean": 72.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.precision": {
+      "mean": 0.6210526315789474,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.recall": {
+      "mean": 0.592964824120603,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.specificity": {
+      "mean": 0.8490566037735849,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.tn": {
+      "mean": 405.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.classification.tp": {
+      "mean": 118.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.36180904522613067,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.592964824120603,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.04522613065326633,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.stopping.mean_absolute_error": {
+      "mean": 0.48743718592964824,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.selection.bfs.validation.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.3969849246231156,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.accuracy": {
+      "mean": 0.798590130916415,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.fn": {
+      "mean": 200.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.tn": {
+      "mean": 793.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.accuracy": {
+      "mean": 0.8813695871097684,
+      "std": 0.016476878418722293,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.balanced_accuracy": {
+      "mean": 0.9074041614123581,
+      "std": 0.009906792100782293,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.f1": {
+      "mean": 0.7642041784207971,
+      "std": 0.024257345226175748,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.fn": {
+      "mean": 9.8,
+      "std": 0.8366600265340756,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.fp": {
+      "mean": 108.0,
+      "std": 16.658331248957683,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.precision": {
+      "mean": 0.6393657040398522,
+      "std": 0.03392942788723617,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.recall": {
+      "mean": 0.951,
+      "std": 0.004183300132670382,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.specificity": {
+      "mean": 0.8638083228247162,
+      "std": 0.02100672288645356,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.tn": {
+      "mean": 685.0,
+      "std": 16.658331248957683,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.classification.tp": {
+      "mean": 190.2,
+      "std": 0.8366600265340756,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.stopping.early_stop_rate": {
+      "mean": 0.491,
+      "std": 0.06358065743604731,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.46,
+      "std": 0.06204836822995429,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.049,
+      "std": 0.004183300132670379,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.stopping.mean_absolute_error": {
+      "mean": 0.589,
+      "std": 0.08180770134895612,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.distance.stopping.mean_signed_error": {
+      "mean": -0.491,
+      "std": 0.08495587089777847,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.accuracy": {
+      "mean": 0.8559919436052367,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.7303656998738965,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.f1": {
+      "mean": 0.5925925925925926,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.fn": {
+      "mean": 96.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.fp": {
+      "mean": 47.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.precision": {
+      "mean": 0.6887417218543046,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.recall": {
+      "mean": 0.52,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.specificity": {
+      "mean": 0.9407313997477932,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.tn": {
+      "mean": 746.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.classification.tp": {
+      "mean": 104.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.235,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.52,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.245,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.stopping.mean_absolute_error": {
+      "mean": 0.55,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bf.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.06,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.accuracy": {
+      "mean": 0.7142857142857143,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.fn": {
+      "mean": 196.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.tn": {
+      "mean": 490.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.accuracy": {
+      "mean": 0.9451895043731778,
+      "std": 0.012265704937587552,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.balanced_accuracy": {
+      "mean": 0.9426530612244898,
+      "std": 0.00899465341675064,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.f1": {
+      "mean": 0.9074125858504205,
+      "std": 0.018957745592679823,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.fn": {
+      "mean": 12.4,
+      "std": 0.8944271909999159,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.fp": {
+      "mean": 25.2,
+      "std": 8.25832912882503,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.precision": {
+      "mean": 0.8803914351901968,
+      "std": 0.034789772029386,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.recall": {
+      "mean": 0.936734693877551,
+      "std": 0.004563404035713862,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.specificity": {
+      "mean": 0.9485714285714286,
+      "std": 0.016853732915969453,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.tn": {
+      "mean": 464.8,
+      "std": 8.25832912882503,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.classification.tp": {
+      "mean": 183.6,
+      "std": 0.8944271909999159,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.stopping.early_stop_rate": {
+      "mean": 0.11224489795918367,
+      "std": 0.03266900121139209,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.8244897959183674,
+      "std": 0.033378422926114544,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.06326530612244897,
+      "std": 0.0045634040357138556,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.stopping.mean_absolute_error": {
+      "mean": 0.19183673469387755,
+      "std": 0.04292996728155638,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.distance.stopping.mean_signed_error": {
+      "mean": -0.0653061224489796,
+      "std": 0.041824288840651425,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.accuracy": {
+      "mean": 0.7128279883381924,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.639795918367347,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.f1": {
+      "mean": 0.48293963254593175,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.fn": {
+      "mean": 104.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.fp": {
+      "mean": 93.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.precision": {
+      "mean": 0.4972972972972973,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.recall": {
+      "mean": 0.46938775510204084,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.specificity": {
+      "mean": 0.810204081632653,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.tn": {
+      "mean": 397.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.classification.tp": {
+      "mean": 92.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.4744897959183674,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.46938775510204084,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.05612244897959184,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.stopping.mean_absolute_error": {
+      "mean": 0.6224489795918368,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_id.bfs.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.5102040816326531,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.accuracy": {
+      "mean": 0.8324958123953099,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.fn": {
+      "mean": 100.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.tn": {
+      "mean": 497.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.accuracy": {
+      "mean": 0.802680067001675,
+      "std": 0.021820595067982673,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.balanced_accuracy": {
+      "mean": 0.8814889336016096,
+      "std": 0.013105528426142474,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.f1": {
+      "mean": 0.6301814857505568,
+      "std": 0.026072245557828336,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.fn": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.fp": {
+      "mean": 117.8,
+      "std": 13.026895255585654,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.precision": {
+      "mean": 0.4604726180132315,
+      "std": 0.027924683275482344,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.recall": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.specificity": {
+      "mean": 0.7629778672032193,
+      "std": 0.026211056852284993,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.tn": {
+      "mean": 379.2,
+      "std": 13.026895255585654,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.classification.tp": {
+      "mean": 100.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.stopping.early_stop_rate": {
+      "mean": 0.794,
+      "std": 0.008944271909999166,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.20600000000000002,
+      "std": 0.008944271909999153,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.stopping.mean_absolute_error": {
+      "mean": 1.178,
+      "std": 0.13026895255585652,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.distance.stopping.mean_signed_error": {
+      "mean": -1.178,
+      "std": 0.13026895255585652,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.accuracy": {
+      "mean": 0.8023450586264657,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.6057042253521127,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.f1": {
+      "mean": 0.34444444444444444,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.fn": {
+      "mean": 69.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.fp": {
+      "mean": 49.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.precision": {
+      "mean": 0.3875,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.recall": {
+      "mean": 0.31,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.specificity": {
+      "mean": 0.9014084507042254,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.tn": {
+      "mean": 448.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.classification.tp": {
+      "mean": 31.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.49,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.31,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.2,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.stopping.mean_absolute_error": {
+      "mean": 1.37,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bf.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.97,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.accuracy": {
+      "mean": 0.7175141242937854,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.fn": {
+      "mean": 100.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.tn": {
+      "mean": 254.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.accuracy": {
+      "mean": 0.7531073446327684,
+      "std": 0.015549558129404404,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.balanced_accuracy": {
+      "mean": 0.6763779527559055,
+      "std": 0.010835715704348768,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.f1": {
+      "mean": 0.5339894902439056,
+      "std": 0.015812982428148985,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.fn": {
+      "mean": 50.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.fp": {
+      "mean": 37.4,
+      "std": 5.504543577809154,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.precision": {
+      "mean": 0.573936112357303,
+      "std": 0.03680118128720357,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.recall": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.specificity": {
+      "mean": 0.852755905511811,
+      "std": 0.021671431408697477,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.tn": {
+      "mean": 216.6,
+      "std": 5.504543577809154,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.classification.tp": {
+      "mean": 50.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.stopping.early_stop_rate": {
+      "mean": 0.362,
+      "std": 0.04324349662087931,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.138,
+      "std": 0.043243496620879306,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.stopping.mean_absolute_error": {
+      "mean": 0.874,
+      "std": 0.05504543577809155,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.distance.stopping.mean_signed_error": {
+      "mean": 0.126,
+      "std": 0.05504543577809153,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.accuracy": {
+      "mean": 0.5819209039548022,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.4085433070866142,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.f1": {
+      "mean": 0.013333333333333334,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.fn": {
+      "mean": 99.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.fp": {
+      "mean": 49.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.precision": {
+      "mean": 0.02,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.recall": {
+      "mean": 0.01,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.specificity": {
+      "mean": 0.8070866141732284,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.tn": {
+      "mean": 205.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.classification.tp": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.49,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.01,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.stopping.mean_absolute_error": {
+      "mean": 1.54,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.mean_nodewise_l2.test.test_ood.bfs.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.54,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.fixed_step": {
+      "mean": 4.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.threshold": {
+      "mean": 0.09599422737956047,
+      "std": 0.014266910183475093,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.accuracy": {
+      "mean": 0.7987927565392354,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.fn": {
+      "mean": 200.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.tn": {
+      "mean": 794.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.accuracy": {
+      "mean": 0.8917505030181087,
+      "std": 0.010372423677088134,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.balanced_accuracy": {
+      "mean": 0.926256926952141,
+      "std": 0.0082969963197153,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.f1": {
+      "mean": 0.7855529016229338,
+      "std": 0.016563164389079562,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.fn": {
+      "mean": 3.2,
+      "std": 2.16794833886788,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.fp": {
+      "mean": 104.4,
+      "std": 10.114346246792227,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.precision": {
+      "mean": 0.6539652419509848,
+      "std": 0.02206207400373272,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.recall": {
+      "mean": 0.984,
+      "std": 0.010839741694339409,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.specificity": {
+      "mean": 0.8685138539042822,
+      "std": 0.012738471343567042,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.tn": {
+      "mean": 689.6,
+      "std": 10.114346246792227,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.classification.tp": {
+      "mean": 196.8,
+      "std": 2.16794833886788,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.stopping.early_stop_rate": {
+      "mean": 0.479,
+      "std": 0.035951356024495104,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.505,
+      "std": 0.03758324094593228,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.016,
+      "std": 0.0108397416943394,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.stopping.mean_absolute_error": {
+      "mean": 0.538,
+      "std": 0.05155094567512801,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.distance.stopping.mean_signed_error": {
+      "mean": -0.506,
+      "std": 0.051889305256478446,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.accuracy": {
+      "mean": 0.8591549295774648,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.7304219143576827,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.f1": {
+      "mean": 0.5953757225433526,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.fn": {
+      "mean": 97.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.fp": {
+      "mean": 43.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.precision": {
+      "mean": 0.7054794520547946,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.recall": {
+      "mean": 0.515,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.specificity": {
+      "mean": 0.9458438287153652,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.tn": {
+      "mean": 751.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.classification.tp": {
+      "mean": 103.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.215,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.515,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.27,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.stopping.mean_absolute_error": {
+      "mean": 0.525,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bf.validation.fixed_step.stopping.mean_signed_error": {
+      "mean": 0.015,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.fixed_step": {
+      "mean": 2.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.threshold": {
+      "mean": 0.45119279623031616,
+      "std": 0.03797383216010895,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.accuracy": {
+      "mean": 0.7056213017751479,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.fn": {
+      "mean": 199.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.tn": {
+      "mean": 477.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.accuracy": {
+      "mean": 0.9769230769230769,
+      "std": 0.008912645166504198,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.balanced_accuracy": {
+      "mean": 0.9704686956796561,
+      "std": 0.006315459258445269,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.f1": {
+      "mean": 0.960745501285347,
+      "std": 0.014713883614213353,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.fn": {
+      "mean": 9.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.fp": {
+      "mean": 6.6,
+      "std": 6.024948132556827,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.precision": {
+      "mean": 0.9671641791044776,
+      "std": 0.029974866331128478,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.recall": {
+      "mean": 0.9547738693467337,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.specificity": {
+      "mean": 0.9861635220125786,
+      "std": 0.0126309185168906,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.tn": {
+      "mean": 470.4,
+      "std": 6.024948132556827,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.classification.tp": {
+      "mean": 190.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.stopping.early_stop_rate": {
+      "mean": 0.0271356783919598,
+      "std": 0.024771371947469825,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.927638190954774,
+      "std": 0.02477137194746981,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.04522613065326633,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.stopping.mean_absolute_error": {
+      "mean": 0.07839195979899498,
+      "std": 0.030276121269129787,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.distance.stopping.mean_signed_error": {
+      "mean": 0.01206030150753769,
+      "std": 0.030276121269129787,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.accuracy": {
+      "mean": 0.7736686390532544,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.721010713947094,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.f1": {
+      "mean": 0.6066838046272494,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.fn": {
+      "mean": 81.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.fp": {
+      "mean": 72.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.precision": {
+      "mean": 0.6210526315789474,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.recall": {
+      "mean": 0.592964824120603,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.specificity": {
+      "mean": 0.8490566037735849,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.tn": {
+      "mean": 405.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.classification.tp": {
+      "mean": 118.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.36180904522613067,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.592964824120603,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.04522613065326633,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.stopping.mean_absolute_error": {
+      "mean": 0.48743718592964824,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.selection.bfs.validation.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.3969849246231156,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.accuracy": {
+      "mean": 0.798590130916415,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.fn": {
+      "mean": 200.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.tn": {
+      "mean": 793.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.accuracy": {
+      "mean": 0.8920443101711983,
+      "std": 0.00899041857831446,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.balanced_accuracy": {
+      "mean": 0.9133398486759142,
+      "std": 0.005730159995736714,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.f1": {
+      "mean": 0.7799956226923795,
+      "std": 0.014228526809636348,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.fn": {
+      "mean": 10.2,
+      "std": 0.8366600265340756,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.fp": {
+      "mean": 97.0,
+      "std": 9.027735042633894,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.precision": {
+      "mean": 0.6623091637471055,
+      "std": 0.020608418473101846,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.recall": {
+      "mean": 0.949,
+      "std": 0.004183300132670382,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.specificity": {
+      "mean": 0.8776796973518285,
+      "std": 0.011384281264355485,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.tn": {
+      "mean": 696.0,
+      "std": 9.027735042633894,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.classification.tp": {
+      "mean": 189.8,
+      "std": 0.8366600265340756,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.stopping.early_stop_rate": {
+      "mean": 0.445,
+      "std": 0.03391164991562633,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.504,
+      "std": 0.03305298776207685,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.051000000000000004,
+      "std": 0.004183300132670378,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.stopping.mean_absolute_error": {
+      "mean": 0.536,
+      "std": 0.04463742824133127,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.distance.stopping.mean_signed_error": {
+      "mean": -0.434,
+      "std": 0.04601630145937414,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.accuracy": {
+      "mean": 0.8559919436052367,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.7303656998738965,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.f1": {
+      "mean": 0.5925925925925926,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.fn": {
+      "mean": 96.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.fp": {
+      "mean": 47.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.precision": {
+      "mean": 0.6887417218543046,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.recall": {
+      "mean": 0.52,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.specificity": {
+      "mean": 0.9407313997477932,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.tn": {
+      "mean": 746.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.classification.tp": {
+      "mean": 104.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.235,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.52,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.245,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.stopping.mean_absolute_error": {
+      "mean": 0.55,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bf.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.06,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.accuracy": {
+      "mean": 0.7142857142857143,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.fn": {
+      "mean": 196.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.tn": {
+      "mean": 490.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.accuracy": {
+      "mean": 0.9723032069970845,
+      "std": 0.010046682763914148,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.balanced_accuracy": {
+      "mean": 0.9628571428571429,
+      "std": 0.0072996636597874994,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.f1": {
+      "mean": 0.9512375534358785,
+      "std": 0.01704454731624726,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.fn": {
+      "mean": 11.6,
+      "std": 0.5477225575051661,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.fp": {
+      "mean": 7.4,
+      "std": 6.767569726275452,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.precision": {
+      "mean": 0.9623743913809178,
+      "std": 0.03440619697263614,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.recall": {
+      "mean": 0.9408163265306123,
+      "std": 0.0027945028444140855,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.specificity": {
+      "mean": 0.9848979591836735,
+      "std": 0.013811366788317233,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.tn": {
+      "mean": 482.6,
+      "std": 6.767569726275452,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.classification.tp": {
+      "mean": 184.4,
+      "std": 0.5477225575051661,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.stopping.early_stop_rate": {
+      "mean": 0.03469387755102041,
+      "std": 0.031739451051011815,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.9061224489795918,
+      "std": 0.032388918873681394,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.05918367346938776,
+      "std": 0.0027945028444141123,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.stopping.mean_absolute_error": {
+      "mean": 0.09693877551020408,
+      "std": 0.035163389673699544,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.distance.stopping.mean_signed_error": {
+      "mean": 0.02142857142857143,
+      "std": 0.0341112543886669,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.accuracy": {
+      "mean": 0.7128279883381924,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.639795918367347,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.f1": {
+      "mean": 0.48293963254593175,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.fn": {
+      "mean": 104.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.fp": {
+      "mean": 93.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.precision": {
+      "mean": 0.4972972972972973,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.recall": {
+      "mean": 0.46938775510204084,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.specificity": {
+      "mean": 0.810204081632653,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.tn": {
+      "mean": 397.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.classification.tp": {
+      "mean": 92.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.4744897959183674,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.46938775510204084,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.05612244897959184,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.stopping.mean_absolute_error": {
+      "mean": 0.6224489795918368,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_id.bfs.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.5102040816326531,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.accuracy": {
+      "mean": 0.8324958123953099,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.fn": {
+      "mean": 100.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.tn": {
+      "mean": 497.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.accuracy": {
+      "mean": 0.8120603015075377,
+      "std": 0.022171379708910265,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.balanced_accuracy": {
+      "mean": 0.8871227364185111,
+      "std": 0.013316210951931034,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.f1": {
+      "mean": 0.6415409501267177,
+      "std": 0.02730762185868979,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.fn": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.fp": {
+      "mean": 112.2,
+      "std": 13.236313686219438,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.precision": {
+      "mean": 0.4727335953202126,
+      "std": 0.029676527579961347,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.recall": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.specificity": {
+      "mean": 0.7742454728370222,
+      "std": 0.026632421903862075,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.tn": {
+      "mean": 384.8,
+      "std": 13.236313686219438,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.classification.tp": {
+      "mean": 100.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.stopping.early_stop_rate": {
+      "mean": 0.788,
+      "std": 0.013038404810405309,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.212,
+      "std": 0.013038404810405297,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.stopping.mean_absolute_error": {
+      "mean": 1.1219999999999999,
+      "std": 0.1323631368621944,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.distance.stopping.mean_signed_error": {
+      "mean": -1.1219999999999999,
+      "std": 0.1323631368621944,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.accuracy": {
+      "mean": 0.8023450586264657,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.6057042253521127,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.f1": {
+      "mean": 0.34444444444444444,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.fn": {
+      "mean": 69.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.fp": {
+      "mean": 49.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.precision": {
+      "mean": 0.3875,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.recall": {
+      "mean": 0.31,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.specificity": {
+      "mean": 0.9014084507042254,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.tn": {
+      "mean": 448.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.classification.tp": {
+      "mean": 31.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.49,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.31,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.2,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.stopping.mean_absolute_error": {
+      "mean": 1.37,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bf.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.97,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.accuracy": {
+      "mean": 0.7175141242937854,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.balanced_accuracy": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.f1": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.fn": {
+      "mean": 100.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.fp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.precision": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.recall": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.specificity": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.tn": {
+      "mean": 254.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.classification.tp": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.stopping.early_stop_rate": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.stopping.exact_stop_accuracy": {
+      "mean": 0.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.stopping.late_or_missing_stop_rate": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.stopping.mean_absolute_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.always_continue.stopping.mean_signed_error": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.accuracy": {
+      "mean": 0.7734463276836159,
+      "std": 0.022457182954069812,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.balanced_accuracy": {
+      "mean": 0.6905511811023622,
+      "std": 0.015649296782954198,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.f1": {
+      "mean": 0.5558187792562176,
+      "std": 0.024928973746199512,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.fn": {
+      "mean": 50.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.fp": {
+      "mean": 30.2,
+      "std": 7.9498427657407165,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.precision": {
+      "mean": 0.6285711686137497,
+      "std": 0.0646906443473897,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.recall": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.specificity": {
+      "mean": 0.8811023622047245,
+      "std": 0.031298593565908334,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.tn": {
+      "mean": 223.8,
+      "std": 7.9498427657407165,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.classification.tp": {
+      "mean": 50.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.stopping.early_stop_rate": {
+      "mean": 0.302,
+      "std": 0.07949842765740715,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.stopping.exact_stop_accuracy": {
+      "mean": 0.198,
+      "std": 0.07949842765740715,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.stopping.late_or_missing_stop_rate": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.stopping.mean_absolute_error": {
+      "mean": 0.8019999999999999,
+      "std": 0.07949842765740717,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.distance.stopping.mean_signed_error": {
+      "mean": 0.198,
+      "std": 0.07949842765740715,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.accuracy": {
+      "mean": 0.5819209039548022,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.balanced_accuracy": {
+      "mean": 0.4085433070866142,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.f1": {
+      "mean": 0.013333333333333334,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.fn": {
+      "mean": 99.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.fp": {
+      "mean": 49.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.precision": {
+      "mean": 0.02,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.recall": {
+      "mean": 0.01,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.specificity": {
+      "mean": 0.8070866141732284,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.tn": {
+      "mean": 205.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.classification.tp": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.stopping.early_stop_rate": {
+      "mean": 0.49,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.stopping.exact_stop_accuracy": {
+      "mean": 0.01,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.stopping.late_or_missing_stop_rate": {
+      "mean": 0.5,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.stopping.mean_absolute_error": {
+      "mean": 1.54,
+      "std": 0.0,
+      "n": 5
+    },
+    "distance_metrics.rms.test.test_ood.bfs.fixed_step.stopping.mean_signed_error": {
+      "mean": -0.54,
+      "std": 0.0,
+      "n": 5
+    },
+    "seed": {
+      "mean": 33.0,
+      "std": 17.392527130926087,
+      "n": 5
+    },
+    "task_metrics.test_id.acc/bf_distance": {
+      "mean": 0.8872310519218445,
+      "std": 0.014483128931170252,
+      "n": 5
+    },
+    "task_metrics.test_id.acc/bf_predecessor": {
+      "mean": 0.8738361835479737,
+      "std": 0.0019126017289168753,
+      "n": 5
+    },
+    "task_metrics.test_id.acc/bf_termination": {
+      "mean": 0.801779282093048,
+      "std": 0.0029697658556546423,
+      "n": 5
+    },
+    "task_metrics.test_id.acc/bfs_state": {
+      "mean": 0.979990017414093,
+      "std": 2.236439029124169e-05,
+      "n": 5
+    },
+    "task_metrics.test_id.acc/bfs_termination": {
+      "mean": 0.7805168271064759,
+      "std": 0.003397495726759991,
+      "n": 5
+    },
+    "task_metrics.test_id.loss": {
+      "mean": 1.5372192859649658,
+      "std": 0.005076932343001369,
+      "n": 5
+    },
+    "task_metrics.test_id.losses/bf_distance": {
+      "mean": 0.004386159311980009,
+      "std": 0.00034743280418403425,
+      "n": 5
+    },
+    "task_metrics.test_id.losses/bf_predecessor": {
+      "mean": 0.25619258880615237,
+      "std": 0.003251906806064124,
+      "n": 5
+    },
+    "task_metrics.test_id.losses/bf_termination": {
+      "mean": 0.8249388933181763,
+      "std": 0.0011953386161400095,
+      "n": 5
+    },
+    "task_metrics.test_id.losses/bfs_state": {
+      "mean": 0.0025006513111293315,
+      "std": 0.00042766921251856653,
+      "n": 5
+    },
+    "task_metrics.test_id.losses/bfs_termination": {
+      "mean": 0.6532431006431579,
+      "std": 0.003179178366696425,
+      "n": 5
+    },
+    "task_metrics.test_ood.acc/bf_distance": {
+      "mean": 0.7013262391090394,
+      "std": 0.017427998784242622,
+      "n": 5
+    },
+    "task_metrics.test_ood.acc/bf_predecessor": {
+      "mean": 0.6500303626060486,
+      "std": 0.00762549771530399,
+      "n": 5
+    },
+    "task_metrics.test_ood.acc/bf_termination": {
+      "mean": 0.7010062217712403,
+      "std": 0.04457640309981365,
+      "n": 5
+    },
+    "task_metrics.test_ood.acc/bfs_state": {
+      "mean": 0.9999966740608215,
+      "std": 7.437026092081563e-06,
+      "n": 5
+    },
+    "task_metrics.test_ood.acc/bfs_termination": {
+      "mean": 0.7289999961853028,
+      "std": 0.004008710206365875,
+      "n": 5
+    },
+    "task_metrics.test_ood.loss": {
+      "mean": 2.284525728225708,
+      "std": 0.01558380424881483,
+      "n": 5
+    },
+    "task_metrics.test_ood.losses/bf_distance": {
+      "mean": 0.009665103070437909,
+      "std": 0.0008468784202975738,
+      "n": 5
+    },
+    "task_metrics.test_ood.losses/bf_predecessor": {
+      "mean": 0.8953673839569092,
+      "std": 0.009899909714832409,
+      "n": 5
+    },
+    "task_metrics.test_ood.losses/bf_termination": {
+      "mean": 0.8385199069976806,
+      "std": 0.0025180361286816066,
+      "n": 5
+    },
+    "task_metrics.test_ood.losses/bfs_state": {
+      "mean": 0.004104147246107459,
+      "std": 0.0013546642187737318,
+      "n": 5
+    },
+    "task_metrics.test_ood.losses/bfs_termination": {
+      "mean": 1.009094476699829,
+      "std": 0.01855417508490191,
+      "n": 5
+    },
+    "task_metrics.val.acc/bf_distance": {
+      "mean": 0.88963303565979,
+      "std": 0.013695256713832331,
+      "n": 5
+    },
+    "task_metrics.val.acc/bf_predecessor": {
+      "mean": 0.8800857782363891,
+      "std": 0.0017777974122691262,
+      "n": 5
+    },
+    "task_metrics.val.acc/bf_termination": {
+      "mean": 0.8314709305763245,
+      "std": 0.005912915360122617,
+      "n": 5
+    },
+    "task_metrics.val.acc/bfs_state": {
+      "mean": 0.9950000047683716,
+      "std": 0.0,
+      "n": 5
+    },
+    "task_metrics.val.acc/bfs_termination": {
+      "mean": 0.7575474262237549,
+      "std": 0.006934668255672993,
+      "n": 5
+    },
+    "task_metrics.val.loss": {
+      "mean": 1.4800282955169677,
+      "std": 0.004230327029356329,
+      "n": 5
+    },
+    "task_metrics.val.losses/bf_distance": {
+      "mean": 0.004426081012934446,
+      "std": 0.00032290853411401816,
+      "n": 5
+    },
+    "task_metrics.val.losses/bf_predecessor": {
+      "mean": 0.24974431991577148,
+      "std": 0.002591493997194393,
+      "n": 5
+    },
+    "task_metrics.val.losses/bf_termination": {
+      "mean": 0.7935050129890442,
+      "std": 0.002009561499658205,
+      "n": 5
+    },
+    "task_metrics.val.losses/bfs_state": {
+      "mean": 0.002516644215211272,
+      "std": 0.00039271580296986375,
+      "n": 5
+    },
+    "task_metrics.val.losses/bfs_termination": {
+      "mean": 0.633316171169281,
+      "std": 0.0037433594295739805,
+      "n": 5
+    },
+    "termination_supervision.weight": {
+      "mean": 1.0,
+      "std": 0.0,
+      "n": 5
+    }
+  }
+}

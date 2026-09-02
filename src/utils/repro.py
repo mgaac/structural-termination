@@ -9,12 +9,14 @@ This module provides functions for:
 import sys
 import json
 import hashlib
+import random
 import subprocess
 from pathlib import Path
 from typing import Dict, Any, Optional
 from datetime import datetime
 
 import mlx.core as mx
+import numpy as np
 
 
 def set_seed(seed: int) -> None:
@@ -23,6 +25,8 @@ def set_seed(seed: int) -> None:
     Args:
         seed: Random seed to use
     """
+    random.seed(seed)
+    np.random.seed(seed)
     mx.random.seed(seed)
 
 

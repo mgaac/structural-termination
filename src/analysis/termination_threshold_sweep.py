@@ -15,6 +15,7 @@ from src.analysis.common import (
     resolve_checkpoint_path,
     resolve_config,
     resolve_dataset_path,
+    portable_path,
 )
 from src.train import evaluate_model
 from src.utils.task_specs import (
@@ -276,6 +277,9 @@ def main() -> None:
         idx = len(losses) + 1
         print(f"[{idx}/{len(thresholds)}] threshold={threshold:.8f}")
         config.model.termination_distance_threshold = float(threshold)
+        config.model.termination_distance_thresholds = {
+            algorithm: float(threshold) for algorithm in algorithm_order
+        }
         _, loss, accuracies = evaluate_model(
             model=model,
             dataset=dataset,
@@ -312,7 +316,7 @@ def main() -> None:
     payload = {
         "checkpoint_step": step,
         "split": args.split,
-        "dataset": str(dataset_path),
+        "dataset": portable_path(dataset_path),
         "tasks": args.tasks,
         "termination": {
             "mode": config.model.termination_mode,
@@ -323,7 +327,7 @@ def main() -> None:
         "thresholds": thresholds,
         "loss": losses,
         "termination_accuracy": termination_accuracy,
-        "plot": str(plot_path),
+        "plot": portable_path(plot_path),
     }
     with open(output_dir / f"{args.split}_threshold_sweep.json", "w") as f:
         json.dump(payload, f, indent=2)

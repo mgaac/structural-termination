@@ -1,9 +1,19 @@
-data/
+/data/
 runs/
 checkpoints/
+/reproduced/
 __pycache__/
 .pytest_cache/
 .ruff_cache/
 .DS_Store
 *.pyc
 *.npz
+!artifacts/reference/data/*.npz
+
+# Locked runs retain machine-local datasets, checkpoints, and logs. The public
+# evidence bundle contains only the frozen protocol and compact result records.
+results/locked_multiseed/aborted_pilots/
+results/locked_multiseed/data/
+results/locked_multiseed/seeds/*/config_locked.yaml
+results/locked_multiseed/seeds/*/run/
+results/locked_multiseed/seeds/*/training.log

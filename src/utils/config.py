@@ -30,10 +30,14 @@ class ModelConfig:
     termination_distance_latent: str = "processed"  # processed, encoded, encoded_bfs, encoded_bf, encoded_prim
     termination_distance: str = "mean_l2"  # l2, mean_l2, l1, mse
     termination_distance_threshold: float = 0.01
+    termination_distance_thresholds: Dict[str, float] = field(default_factory=dict)
     termination_distance_signal: bool = True
+    termination_supervision_weight: float = 1.0
+    termination_balance_loss: bool = False
     processor_input_adapter: bool = False
     decoder_input_mode: str = "processed_encoded"
     predecessor_input_mode: str = "processed_encoded_edge"
+    evaluation_rollout_mode: str = "autoregressive"
 
 
 @dataclass
@@ -216,9 +220,17 @@ def validate_config(config: ExperimentConfig) -> None:
             f"got {config.model.termination_distance_latent}"
         )
 
-    if config.model.termination_distance not in ["l2", "mean_l2", "l1", "mse"]:
+    if config.model.termination_distance not in [
+        "l2",
+        "mean_l2",
+        "mean_nodewise_l2",
+        "rms",
+        "l1",
+        "mse",
+    ]:
         raise ValueError(
-            "termination_distance must be one of: l2, mean_l2, l1, mse. "
+            "termination_distance must be one of: l2, mean_l2, "
+            "mean_nodewise_l2, rms, l1, mse. "
             f"Got {config.model.termination_distance}"
         )
 
@@ -228,11 +240,31 @@ def validate_config(config: ExperimentConfig) -> None:
             f"got {config.model.termination_distance_threshold}"
         )
 
+    invalid_threshold_algorithms = sorted(
+        set(config.model.termination_distance_thresholds)
+        - set(config.model.algorithms)
+    )
+    if invalid_threshold_algorithms:
+        raise ValueError(
+            "termination_distance_thresholds contains algorithms not present in "
+            f"model.algorithms: {', '.join(invalid_threshold_algorithms)}"
+        )
+    for algorithm, threshold in config.model.termination_distance_thresholds.items():
+        if not isinstance(threshold, (int, float)) or threshold < 0:
+            raise ValueError(
+                "termination_distance_thresholds values must be non-negative; "
+                f"got {algorithm}={threshold!r}"
+            )
+
     if not isinstance(config.model.termination_distance_signal, bool):
         raise ValueError(
             "termination_distance_signal must be boolean, "
             f"got {type(config.model.termination_distance_signal).__name__}"
         )
+    if config.model.termination_supervision_weight < 0:
+        raise ValueError("termination_supervision_weight must be non-negative.")
+    if not isinstance(config.model.termination_balance_loss, bool):
+        raise ValueError("termination_balance_loss must be boolean.")
 
     if config.model.decoder_input_mode not in ["processed_encoded", "processed_only"]:
         raise ValueError(
@@ -249,6 +281,12 @@ def validate_config(config: ExperimentConfig) -> None:
             "predecessor_input_mode must be one of: "
             "processed_encoded_edge, processed_edge, processed_only. "
             f"Got {config.model.predecessor_input_mode}"
+        )
+
+    if config.model.evaluation_rollout_mode not in ["autoregressive", "teacher_forced"]:
+        raise ValueError(
+            "evaluation_rollout_mode must be one of: autoregressive, teacher_forced. "
+            f"Got {config.model.evaluation_rollout_mode}"
         )
 
     # Validate training config

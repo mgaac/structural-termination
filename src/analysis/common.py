@@ -23,6 +23,9 @@ from src.utils.task_specs import (
 )
 
 
+REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+
+
 def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text())
 
@@ -30,6 +33,15 @@ def load_json(path: Path) -> dict[str, Any]:
 def write_json(path: Path, payload: Mapping[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2))
+
+
+def portable_path(path: str | Path) -> str:
+    """Return a repository-relative path when possible."""
+    resolved = Path(path).resolve()
+    try:
+        return str(resolved.relative_to(REPOSITORY_ROOT))
+    except ValueError:
+        return str(resolved)
 
 
 def primary_score_for_target(

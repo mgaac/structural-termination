@@ -1,0 +1,65 @@
+{
+  "protocol": "validation-locked-v1",
+  "split_specs": {
+    "train": {
+      "graphs": 1500,
+      "nodes": 20,
+      "generator_seed": 1101
+    },
+    "val": {
+      "graphs": 200,
+      "nodes": 20,
+      "generator_seed": 2202
+    },
+    "test_id": {
+      "graphs": 200,
+      "nodes": 20,
+      "generator_seed": 3303
+    },
+    "test_ood": {
+      "graphs": 100,
+      "nodes": 200,
+      "generator_seed": 4404
+    }
+  },
+  "sha256": {
+    "results/locked_multiseed/data/train_20n_1500g.npz": "aa45f5da0744a1e356d445d06429c7cb67e14116e29cfedac903bcedad4d85c5",
+    "results/locked_multiseed/data/val_20n_200g.npz": "3fa65738cf1cfaf264894fbc895833ee9c8e040b003216add2d27fa47e96b417",
+    "results/locked_multiseed/data/test_id_20n_200g.npz": "fd15686d4e6261d5043d53ec0d3327cba7134acf065332b6f704f4835280234d",
+    "results/locked_multiseed/data/test_ood_200n_100g.npz": "873fb9b77d9785c66b1cee128371263f8f3c48830a489e709e3a5f893c433cac"
+  },
+  "exact_graph_overlap_counts": {
+    "train__val": 0,
+    "train__test_id": 0,
+    "train__test_ood": 0,
+    "val__test_id": 0,
+    "val__test_ood": 0,
+    "test_id__test_ood": 0
+  },
+  "model_seeds": [
+    11,
+    22,
+    33,
+    44,
+    55
+  ],
+  "distance_metrics": [
+    "rms",
+    "mean_nodewise_l2"
+  ],
+  "training": {
+    "epochs": 100,
+    "learning_rate": 1e-05,
+    "batch_size": 10,
+    "max_grad_norm": 1.0,
+    "termination_supervision_weight": 1.0,
+    "termination_balance_loss": true,
+    "training_rollout": "teacher_forced",
+    "evaluation_rollout": "autoregressive"
+  },
+  "selection": {
+    "distance_threshold": "maximum validation balanced accuracy; ties by MAE then smaller threshold",
+    "fixed_step": "minimum validation stopping-step MAE; ties by balanced accuracy then earlier step"
+  },
+  "test_policy": "test_id and test_ood remain unopened until validation selections are fixed per seed"
+}

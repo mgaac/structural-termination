@@ -1,0 +1,17 @@
+{
+  "checkpoint_step": 500,
+  "dataset": "artifacts/reference/data/test_200n_20g.npz",
+  "num_graphs": 20,
+  "rollout_mode": "teacher_forced",
+  "loss": 0.5822619199752808,
+  "losses/bfs_state": 8.986608008854091e-06,
+  "losses/bfs_termination": 0.0,
+  "losses/bf_distance": 0.005317491013556719,
+  "losses/bf_predecessor": 0.5769387483596802,
+  "losses/bf_termination": 0.0,
+  "acc/bfs_state": 1.0,
+  "acc/bfs_termination": 0.6316666603088379,
+  "acc/bf_distance": 0.8187718391418457,
+  "acc/bf_predecessor": 0.8206279873847961,
+  "acc/bf_termination": 0.8092063069343567
+}

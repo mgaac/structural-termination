@@ -30,6 +30,45 @@ def _tree_unflatten(tree):
     """Unflatten a flat tree produced by _tree_flatten."""
     return utils.tree_unflatten(list(tree.items()) if isinstance(tree, dict) else tree)
 
+
+LEGACY_MODEL_KEY_MAP = {
+    "bfs_decoder.bfs_state_outputs.weight": "bfs_decoder.state_outputs.weight",
+    "bf_decoder.predecessor_head.bias": "bf_decoder.pointer_head.pointer_head.bias",
+    "bf_decoder.predecessor_head.weight": "bf_decoder.pointer_head.pointer_head.weight",
+    "bf_decoder.predecessor_ln.bias": "bf_decoder.pointer_head.pointer_ln.bias",
+    "bf_decoder.predecessor_ln.weight": "bf_decoder.pointer_head.pointer_ln.weight",
+}
+
+
+def _prepare_model_weights(model: nn.Module, weights: Dict[str, mx.array]) -> Dict[str, mx.array]:
+    """Migrate known legacy names and reject partial checkpoint loads."""
+    migrated = {
+        LEGACY_MODEL_KEY_MAP.get(name, name): value
+        for name, value in weights.items()
+    }
+    expected = _tree_flatten(model.parameters())
+    missing = sorted(set(expected) - set(migrated))
+    unexpected = sorted(set(migrated) - set(expected))
+    if missing or unexpected:
+        details = []
+        if missing:
+            details.append("missing=" + ", ".join(missing))
+        if unexpected:
+            details.append("unexpected=" + ", ".join(unexpected))
+        raise ValueError("Checkpoint does not match model: " + "; ".join(details))
+
+    shape_mismatches = [
+        f"{name}: checkpoint={tuple(migrated[name].shape)}, model={tuple(expected[name].shape)}"
+        for name in expected
+        if tuple(migrated[name].shape) != tuple(expected[name].shape)
+    ]
+    if shape_mismatches:
+        raise ValueError(
+            "Checkpoint tensor shapes do not match model: " + "; ".join(shape_mismatches)
+        )
+    return migrated
+
+
 class CheckpointManager:
     """Manages saving and loading of training checkpoints.
 
@@ -160,7 +199,7 @@ class CheckpointManager:
         if not model_file.exists():
             raise ValueError(f"Model weights not found: {model_file}")
 
-        model_weights = mx.load(str(model_file))
+        model_weights = _prepare_model_weights(model, mx.load(str(model_file)))
         model.update(_tree_unflatten(model_weights))
 
         # Load optimizer state if optimizer provided

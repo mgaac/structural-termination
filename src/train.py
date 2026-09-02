@@ -70,11 +70,16 @@ def parse_args():
     parser.add_argument('--resume', action='store_true',
                         help='Resume training from latest checkpoint in existing run')
     parser.add_argument('--run-dir', type=str, default=None,
-                        help='Specific run directory to resume from (only with --resume)')
+                        help='Explicit output run directory, or an existing run with --resume')
     parser.add_argument('--checkpoint', type=str, default=None,
                         help='Checkpoint directory or file to load (for --eval-only)')
     parser.add_argument('--eval-only', action='store_true',
                         help='Skip training and run evaluation only')
+    parser.add_argument(
+        '--skip-final-test',
+        action='store_true',
+        help='Train and checkpoint without opening the test split.',
+    )
     parser.add_argument('--tasks', type=str, default=None, choices=SELECT_TASK_CHOICES,
                         help='Tasks to optimize/evaluate. Overrides training.tasks from config.')
     parser.add_argument('--termination-threshold', type=float, default=None,
@@ -428,9 +433,12 @@ def setup_run_directory(config: ExperimentConfig, resume: bool = False, run_dir:
         return run_path
     else:
         # Create new run directory
-        git_info = get_git_info()
-        run_name = generate_run_name(config.name, git_info)
-        run_path = runs_root / run_name
+        if run_dir is not None:
+            run_path = Path(run_dir)
+        else:
+            git_info = get_git_info()
+            run_name = generate_run_name(config.name, git_info)
+            run_path = runs_root / run_name
         run_path.mkdir(parents=True, exist_ok=False)
 
         # Create subdirectories
@@ -685,6 +693,21 @@ def graph_execution_loss_fn(
             )
             if termination_settings["mode"] == "distance" and not termination_settings["distance_signal"]:
                 termination_loss = mx.array(0.0)
+            else:
+                positive_weight = (
+                    max(step_counts[algorithm] - 1, 1)
+                    if termination_settings["balance_loss"]
+                    else 1
+                )
+                termination_loss = (
+                    termination_loss
+                    * (
+                        1
+                        + (positive_weight - 1)
+                        * termination_targets[algorithm]
+                    )
+                    * termination_settings["supervision_weight"]
+                )
             raw_losses = raw_losses.at[
                 current_metric_index[f"{algorithm}_termination"]
             ].add(termination_loss)
@@ -1050,6 +1073,10 @@ def main():
         if args.termination_threshold < 0:
             raise ValueError("--termination-threshold must be non-negative.")
         config.model.termination_distance_threshold = float(args.termination_threshold)
+        config.model.termination_distance_thresholds = {
+            algorithm: float(args.termination_threshold)
+            for algorithm in config.model.algorithms
+        }
     if args.termination_latent is not None:
         config.model.termination_distance_latent = args.termination_latent
     if args.disable_distance_termination_signal:
@@ -1079,6 +1106,7 @@ def main():
         f"distance={config.model.termination_distance}, "
         f"latent={config.model.termination_distance_latent}, "
         f"threshold={config.model.termination_distance_threshold}, "
+        f"thresholds={config.model.termination_distance_thresholds}, "
         f"distance_signal={config.model.termination_distance_signal}"
     )
     if config.training.init_checkpoint:
@@ -1193,6 +1221,7 @@ def main():
                 "distance": config.model.termination_distance,
                 "latent": config.model.termination_distance_latent,
                 "threshold": float(config.model.termination_distance_threshold),
+                "thresholds": dict(config.model.termination_distance_thresholds),
                 "distance_signal": bool(config.model.termination_distance_signal),
             },
             "val": val_payload,
@@ -1432,27 +1461,29 @@ def main():
             print(f"Saving checkpoint at epoch {epoch}...")
             checkpoint_manager.save(model, optimizer, epoch, metadata={'epoch': epoch})
 
-    # Final evaluation on test set
-    print("\n" + "=" * 80)
-    print("Final evaluation on test set...")
-    if test_dataset is None:
-        print("Loading test dataset...")
-        test_load_start = time.perf_counter()
-        test_dataset = load_split_dataset(config, "test", selected_tasks)
-        test_load_seconds = time.perf_counter() - test_load_start
-        print(f"Test: {len(test_dataset)} (loaded in {test_load_seconds:.1f}s)")
-    test_aux_losses, test_loss, test_accuracies = evaluate_model(
-        model, test_dataset, config.model.embed_dim, config.model, selected_tasks
-    )
+    if args.skip_final_test:
+        print("\nFinal test evaluation skipped by locked-protocol request.")
+    else:
+        print("\n" + "=" * 80)
+        print("Final evaluation on test set...")
+        if test_dataset is None:
+            print("Loading test dataset...")
+            test_load_start = time.perf_counter()
+            test_dataset = load_split_dataset(config, "test", selected_tasks)
+            test_load_seconds = time.perf_counter() - test_load_start
+            print(f"Test: {len(test_dataset)} (loaded in {test_load_seconds:.1f}s)")
+        test_aux_losses, test_loss, test_accuracies = evaluate_model(
+            model, test_dataset, config.model.embed_dim, config.model, selected_tasks
+        )
 
-    test_metrics = {"loss": float(test_loss)}
-    test_metrics.update(metric_dict("acc", test_accuracies, model.algorithms))
-    logger.log(config.training.epochs, test_metrics, split="test")
-    logger.log_summary({"final_" + k: v for k, v in test_metrics.items()})
+        test_metrics = {"loss": float(test_loss)}
+        test_metrics.update(metric_dict("acc", test_accuracies, model.algorithms))
+        logger.log(config.training.epochs, test_metrics, split="test")
+        logger.log_summary({"final_" + k: v for k, v in test_metrics.items()})
 
-    print("\nTest Results:")
-    print(f"  Loss: {test_loss:.6f}")
-    print(f"  Accuracies: {format_accuracy_summary(test_accuracies, model.algorithms)}")
+        print("\nTest Results:")
+        print(f"  Loss: {test_loss:.6f}")
+        print(f"  Accuracies: {format_accuracy_summary(test_accuracies, model.algorithms)}")
 
     # Final checkpoint
     if config.logging.save_checkpoints:

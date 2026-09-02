@@ -13,6 +13,7 @@ _EXPORTS = {
     "analyze_failure_modes": (".eval", "analyze_failure_modes"),
     "calculate_accuracies": (".eval", "calculate_accuracies"),
     "calculate_losses_and_accuracies": (".eval", "calculate_losses_and_accuracies"),
+    "collect_termination_traces": (".eval", "collect_termination_traces"),
     "extract_per_head_magnitude_grads": (".eval", "extract_per_head_magnitude_grads"),
     "print_execution_details": (".eval", "print_execution_details"),
     "ExperimentConfig": (".config", "ExperimentConfig"),

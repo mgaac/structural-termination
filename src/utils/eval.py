@@ -7,8 +7,10 @@ import mlx.nn as nn
 import mlx.utils as utils
 
 from src.utils.termination import (
+    compute_latent_distance,
     compute_distance_termination_logits,
     get_distance_latent,
+    init_previous_latent,
     needs_aux_latents,
     resolve_termination_settings,
 )
@@ -165,6 +167,11 @@ def _forward_step(
 
     if termination_settings["mode"] == "distance":
         current_latent = get_distance_latent(termination_settings, processed_embeddings, aux)
+        termination_distance = compute_latent_distance(
+            init_previous_latent(previous_distance_latent, current_latent),
+            current_latent,
+            termination_settings["distance_type"],
+        )
         termination_logits = compute_distance_termination_logits(
             settings=termination_settings,
             prev_latent=previous_distance_latent,
@@ -174,6 +181,7 @@ def _forward_step(
         next_distance_latent = current_latent
     else:
         termination_logits = termination_probs
+        termination_distance = None
         next_distance_latent = previous_distance_latent
 
     _eval_trees(algorithm_outputs, termination_logits, processed_embeddings, aux)
@@ -185,6 +193,7 @@ def _forward_step(
         "termination_targets": termination_targets,
         "algorithm_outputs": algorithm_outputs,
         "termination_logits": termination_logits,
+        "termination_distance": termination_distance,
         "processed_embeddings": processed_embeddings,
         "next_distance_latent": next_distance_latent,
         "next_feature_values": _predicted_feature_values_for_next_step(
@@ -192,6 +201,21 @@ def _forward_step(
             algorithm_order,
         ),
     }
+
+
+def _next_rollout_features(
+    termination_cfg,
+    graph_data,
+    step_index,
+    algorithm_order,
+    predicted_feature_values,
+):
+    mode = getattr(termination_cfg, "evaluation_rollout_mode", "autoregressive")
+    if mode == "teacher_forced":
+        return feature_values_for_step(graph_data, step_index + 1, algorithm_order)
+    if mode == "autoregressive":
+        return predicted_feature_values
+    raise ValueError(f"Unknown evaluation rollout mode: {mode}")
 
 
 def _pointer_loss_and_accuracy(predictions, targets):
@@ -276,7 +300,13 @@ def print_execution_details(model, graph_data, embedding_dim=128, termination_cf
         termination_logits = step_payload["termination_logits"]
         processed_embeddings = step_payload["processed_embeddings"]
         previous_distance_latent = step_payload["next_distance_latent"]
-        current_feature_values = step_payload["next_feature_values"]
+        current_feature_values = _next_rollout_features(
+            termination_cfg,
+            graph_data,
+            step_index,
+            algorithm_order,
+            step_payload["next_feature_values"],
+        )
 
         print(f"\n{'=' * 60}")
         print(f"STEP {step_index} -> {step_index + 1}")
@@ -462,6 +492,21 @@ def print_execution_details(model, graph_data, embedding_dim=128, termination_cf
             )
             if termination_settings["mode"] == "distance" and not termination_settings["distance_signal"]:
                 termination_loss = mx.array(0.0)
+            else:
+                positive_weight = (
+                    max(step_counts[algorithm] - 1, 1)
+                    if termination_settings["balance_loss"]
+                    else 1
+                )
+                termination_loss = (
+                    termination_loss
+                    * (
+                        1
+                        + (positive_weight - 1)
+                        * termination_targets[algorithm]
+                    )
+                    * termination_settings["supervision_weight"]
+                )
             termination_correct = _int_item(
                 (mx.sigmoid(termination_logits[algorithm]) > 0.5).astype(mx.float32)
                 == termination_targets[algorithm]
@@ -573,7 +618,13 @@ def calculate_losses_and_accuracies(
         termination_logits = step_payload["termination_logits"]
         processed_embeddings = step_payload["processed_embeddings"]
         previous_distance_latent = step_payload["next_distance_latent"]
-        current_feature_values = step_payload["next_feature_values"]
+        current_feature_values = _next_rollout_features(
+            termination_cfg,
+            graph_data,
+            step_index,
+            algorithm_order,
+            step_payload["next_feature_values"],
+        )
 
         raw_losses = mx.zeros([len(current_metric_names)])
         for algorithm in algorithm_order:
@@ -674,6 +725,21 @@ def calculate_losses_and_accuracies(
             )
             if termination_settings["mode"] == "distance" and not termination_settings["distance_signal"]:
                 termination_loss = mx.array(0.0)
+            else:
+                positive_weight = (
+                    max(step_counts[algorithm] - 1, 1)
+                    if termination_settings["balance_loss"]
+                    else 1
+                )
+                termination_loss = (
+                    termination_loss
+                    * (
+                        1
+                        + (positive_weight - 1)
+                        * termination_targets[algorithm]
+                    )
+                    * termination_settings["supervision_weight"]
+                )
             raw_losses = raw_losses.at[
                 current_metric_index[f"{algorithm}_termination"]
             ].add(termination_loss)
@@ -786,7 +852,13 @@ def _graph_failure_details(
         termination_logits = step_payload["termination_logits"]
         processed_embeddings = step_payload["processed_embeddings"]
         previous_distance_latent = step_payload["next_distance_latent"]
-        current_feature_values = step_payload["next_feature_values"]
+        current_feature_values = _next_rollout_features(
+            termination_cfg,
+            graph_data,
+            step_index,
+            algorithm_order,
+            step_payload["next_feature_values"],
+        )
 
         step_entry = {"step": int(step_index + 1)}
         for metric_name in current_metric_names:
@@ -1010,6 +1082,7 @@ def analyze_failure_modes(
             "distance": termination_settings["distance_type"],
             "latent": termination_settings["distance_latent"],
             "threshold": float(termination_settings["distance_threshold"]),
+            "thresholds": dict(termination_settings["distance_thresholds"]),
             "distance_signal": bool(termination_settings["distance_signal"]),
         },
         "selected_tasks": selected_tasks,
@@ -1041,6 +1114,86 @@ def analyze_failure_modes(
         "ranked_failed_graph_indices": ranked_failed_graph_indices,
         "failed_graphs": failed_graphs,
     }
+
+
+def collect_termination_traces(
+    model,
+    dataset,
+    termination_cfg,
+    selected_tasks=None,
+):
+    """Collect distance/target traces without stopping the counterfactual rollout.
+
+    Recurrence follows ``evaluation_rollout_mode``. Locked experiments require
+    autoregressive mode; continuing through the reference horizon lets every
+    stopping rule be scored on identical latent trajectories.
+    """
+    if getattr(termination_cfg, "evaluation_rollout_mode", None) != "autoregressive":
+        raise ValueError(
+            "collect_termination_traces requires evaluation_rollout_mode=autoregressive."
+        )
+
+    algorithm_order = tuple(getattr(model, "algorithms", ALGORITHMS))
+    selected_tasks = _normalize_selected_tasks(selected_tasks, algorithm_order)
+    termination_settings = resolve_termination_settings(termination_cfg)
+    if termination_settings["mode"] != "distance":
+        raise ValueError("Termination traces require termination_mode=distance.")
+
+    traces = {algorithm: [] for algorithm in algorithm_order if selected_tasks[algorithm]}
+    model.eval()
+    for graph_index, graph_data in enumerate(dataset):
+        num_nodes = int(graph_data["num_nodes"])
+        step_counts = execution_step_counts(graph_data, algorithm_order)
+        graph_tasks = selected_tasks_for_graph(
+            graph_data, selected_tasks, algorithm_order
+        )
+        previous_hidden = mx.zeros([num_nodes, model.processor_embed_dim])
+        previous_distance_latent = None
+        current_features = feature_values_for_step(graph_data, 0, algorithm_order)
+        graph_records = {
+            algorithm: {
+                "graph_index": int(graph_index),
+                "num_nodes": num_nodes,
+                "distances": [],
+                "targets": [],
+            }
+            for algorithm in traces
+            if graph_tasks.get(algorithm, False)
+        }
+
+        for step_index in range(max(step_counts.values(), default=0)):
+            payload = _forward_step(
+                model=model,
+                graph_data=graph_data,
+                step_index=step_index,
+                previous_step_hidden_states=previous_hidden,
+                previous_distance_latent=previous_distance_latent,
+                termination_settings=termination_settings,
+                algorithm_order=algorithm_order,
+                step_counts=step_counts,
+                feature_values_override=current_features,
+            )
+            if payload is None:
+                continue
+
+            distance = _float_item(payload["termination_distance"])
+            for algorithm, record in graph_records.items():
+                if not payload["sample_exists"][algorithm]:
+                    continue
+                record["distances"].append(distance)
+                record["targets"].append(
+                    _int_item(payload["termination_targets"][algorithm])
+                )
+
+            previous_hidden = payload["processed_embeddings"]
+            previous_distance_latent = payload["next_distance_latent"]
+            current_features = payload["next_feature_values"]
+
+        for algorithm, record in graph_records.items():
+            if record["targets"]:
+                traces[algorithm].append(record)
+
+    return traces
 
 
 def safe_trained_model(

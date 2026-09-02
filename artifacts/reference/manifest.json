@@ -1,0 +1,18 @@
+{
+  "bundle": "reference-checkpoint-evaluation",
+  "source_run": "20260208-130950_7993947-dirtyd358aa87_termination",
+  "checkpoint_step": 500,
+  "training_seed_recorded": 42,
+  "provenance_limitations": [
+    "The original training checkout was dirty and its exact diff is unavailable.",
+    "The original validation split is unavailable; no validation claim uses this bundle.",
+    "The 20-node dataset is used only for the current convergence diagnostic.",
+    "The 200-node dataset is the exact surviving input for the displayed test metrics."
+  ],
+  "sha256": {
+    "artifacts/reference/checkpoint/step_00000500/checkpoint.json": "f84432dacf294a97f530c6afe0167fc15b6541770dbd0e1ecf8cd2bdde57d2ab",
+    "artifacts/reference/checkpoint/step_00000500/model.safetensors": "a8aac86a2d20f546a4ec3d6ae999b85b2f41d849cdfb89691f725938c656894c",
+    "artifacts/reference/data/test_200n_20g.npz": "90c6eb602ff755bdc7c1595dae9b5635f02414db20606e4aa31f635c01241fea",
+    "artifacts/reference/data/test_20n_100g.npz": "985033e4d4a47376d7a56b09dc539ed90eddaa3011911343ac0eff873aa4729d"
+  }
+}

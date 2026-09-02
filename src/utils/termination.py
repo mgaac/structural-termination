@@ -16,7 +16,10 @@ def resolve_termination_settings(cfg: Any | None) -> Dict[str, Any]:
             "distance_latent": "processed",
             "distance_type": "mean_l2",
             "distance_threshold": 0.01,
+            "distance_thresholds": {},
             "distance_signal": True,
+            "supervision_weight": 1.0,
+            "balance_loss": False,
         }
 
     return {
@@ -24,7 +27,12 @@ def resolve_termination_settings(cfg: Any | None) -> Dict[str, Any]:
         "distance_latent": getattr(cfg, "termination_distance_latent", "processed"),
         "distance_type": getattr(cfg, "termination_distance", "mean_l2"),
         "distance_threshold": getattr(cfg, "termination_distance_threshold", 0.01),
+        "distance_thresholds": dict(
+            getattr(cfg, "termination_distance_thresholds", {}) or {}
+        ),
         "distance_signal": getattr(cfg, "termination_distance_signal", True),
+        "supervision_weight": getattr(cfg, "termination_supervision_weight", 1.0),
+        "balance_loss": getattr(cfg, "termination_balance_loss", False),
     }
 
 
@@ -72,9 +80,11 @@ def compute_latent_distance(
     diff = current_latent - prev_latent
     if distance_type == "l2":
         return mx.sqrt(mx.sum(diff * diff))
-    if distance_type == "mean_l2":
+    if distance_type in {"mean_l2", "mean_nodewise_l2"}:
         per_node = mx.sqrt(mx.sum(diff * diff, axis=1))
         return mx.mean(per_node)
+    if distance_type == "rms":
+        return mx.sqrt(mx.mean(diff * diff))
     if distance_type == "l1":
         return mx.sum(mx.abs(diff))
     if distance_type == "mse":
@@ -90,7 +100,11 @@ def compute_distance_termination_logits(
 ) -> Dict[str, mx.array]:
     prev_latent = init_previous_latent(prev_latent, current_latent)
     distance = compute_latent_distance(prev_latent, current_latent, settings["distance_type"])
-    threshold = mx.array(settings["distance_threshold"])
-    logit = threshold - distance
     algorithms = tuple(algorithms) if algorithms is not None else DEFAULT_ALGORITHMS
-    return {algorithm: logit for algorithm in algorithms}
+    thresholds = settings.get("distance_thresholds", {})
+    return {
+        algorithm: mx.array(
+            thresholds.get(algorithm, settings["distance_threshold"])
+        ) - distance
+        for algorithm in algorithms
+    }

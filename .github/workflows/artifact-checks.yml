@@ -4,13 +4,33 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   verify-published-results:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
         with:
-          python-version: "3.12"
+          python-version: "3.13"
       - run: python -m pip install pytest
-      - run: pytest -q tests/test_published_results.py
+      - run: >-
+          python -m pytest -q
+          tests/test_published_results.py
+          tests/test_locked_results.py
+
+  reproduce-reference:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pytest -q
+      - run: python -m src.reproduce reference
+      - run: python -m src.reproduce smoke
+      - run: python -m src.analysis.plot_locked_results
