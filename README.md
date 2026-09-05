@@ -70,8 +70,8 @@ unchanged. Deltas are no-supervision minus supervised.
 | BFS, 200 nodes | $0.6906$ | 0.5524 | -0.1382 | 0.802 | 1.866 | +1.064 |
 
 Supervision improves every reported BFS stopping metric in all five paired
-seeds. Exact BFS stopping falls from $0.906$ to $0.498$ on 20-node graphs and
-from $0.198$ to $0.054$ on 200-node graphs when supervision is removed.
+seeds. Exact BFS stopping falls from 0.906 to 0.498 on 20-node graphs and
+from 0.198 to 0.054 on 200-node graphs when supervision is removed.
 Bellman–Ford changes are small and inconsistent across seeds: its structural
 distance largely emerges from the algorithm-task objective, while its stopping
 time remains poor under the 20-to-200-node shift in both treatments.
