@@ -64,10 +64,10 @@ unchanged. Deltas are no-supervision minus supervised.
 
 | Evaluation | Supervised balanced accuracy | No-supervision balanced accuracy | $\Delta$ | Supervised stop MAE | No-supervision stop MAE | $\Delta$ |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Bellman–Ford, 20 nodes | $0.9133$ | $0.9052$ | $-0.0081$ | $0.536$ | $0.565$ | $+0.029$ |
-| BFS, 20 nodes | $0.9629$ | $0.7971$ | $-0.1657$ | $0.097$ | $0.677$ | $+0.580$ |
-| Bellman–Ford, 200 nodes | $0.8871$ | $0.8793$ | $-0.0078$ | $1.122$ | $1.200$ | $+0.078$ |
-| BFS, 200 nodes | $0.6906$ | $0.5524$ | $-0.1382$ | $0.802$ | $1.866$ | $+1.064$ |
+| Bellman–Ford, 20 nodes | 0.9133 | 0.9052 | -0.0081 | 0.536 | 0.565 | +0.029 |
+| BFS, 20 nodes | $0.9629$ | 0.7971 | -0.1657 | 0.097 | 0.677 | +0.580 |
+| Bellman–Ford, 200 nodes | 0.8871 | 0.8793 | -0.0078 | 1.122 | 1.200 | +0.078 |
+| BFS, 200 nodes | $0.6906$ | 0.5524 | -0.1382 | 0.802 | 1.866 | +1.064 |
 
 Supervision improves every reported BFS stopping metric in all five paired
 seeds. Exact BFS stopping falls from $0.906$ to $0.498$ on 20-node graphs and
@@ -136,4 +136,4 @@ Run the matched ablation with termination supervision disabled:
 
 ```bash
 make locked-no-supervision
-``
+```
