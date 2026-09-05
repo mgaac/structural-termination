@@ -56,6 +56,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seeds", default="11,22,33,44,55")
     parser.add_argument("--prepare-only", action="store_true")
     parser.add_argument("--skip-training", action="store_true")
+    parser.add_argument("--worker-seed", type=int, help=argparse.SUPPRESS)
     return parser.parse_args()
 
 
@@ -170,7 +171,6 @@ def _evaluate_seed(seed: int, base_config, paths: dict[str, Path], output_dir: P
     config.data.val_path = str(paths["val"])
     config.data.test_path = str(paths["test_id"])
     config.model.evaluation_rollout_mode = "autoregressive"
-    config.model.termination_distance_signal = True
     validate_config(config)
     config_path = seed_dir / "config_locked.yaml"
     save_config(config, config_path)
@@ -320,15 +320,30 @@ def _aggregate_scalar_paths(results: list[dict]) -> dict[str, dict[str, float]]:
 
 def main() -> None:
     args = parse_args()
+    output_dir = args.output_dir.resolve()
+    config = load_config(args.config)
+    if args.worker_seed is not None:
+        paths = {
+            split: _dataset_path(output_dir, split, graphs, nodes)
+            for split, (graphs, nodes, _) in SPLIT_SPECS.items()
+        }
+        missing = [str(path) for path in paths.values() if not path.exists()]
+        if missing:
+            raise FileNotFoundError(
+                "Prepare the locked datasets before starting seed workers: "
+                + ", ".join(missing)
+            )
+        _evaluate_seed(args.worker_seed, config, paths, output_dir)
+        print(f"Locked seed complete: {args.worker_seed}")
+        return
+
     seeds = [int(value) for value in args.seeds.split(",") if value.strip()]
     if len(seeds) < 5 and not args.prepare_only:
         raise ValueError("The locked experiment requires at least five model seeds.")
     if len(set(seeds)) != len(seeds):
         raise ValueError("Model seeds must be unique.")
 
-    output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
-    config = load_config(args.config)
     paths = prepare_datasets(config, output_dir)
     manifest_path = output_dir / "protocol_manifest.json"
     manifest = json.loads(manifest_path.read_text())

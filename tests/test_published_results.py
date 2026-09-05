@@ -1,80 +1,57 @@
-import hashlib
 import json
+import math
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXPECTED = json.loads((ROOT / "results/reference/expected.json").read_text())
-MANIFEST = json.loads((ROOT / "artifacts/reference/manifest.json").read_text())
+SUPERVISED = ROOT / "results" / "locked_multiseed"
+NO_SUPERVISION = ROOT / "results" / "locked_multiseed_no_supervision"
+COMPARISON = json.loads((NO_SUPERVISION / "comparison_to_supervised.json").read_text())
 
 
-def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+def _metric(split: str, algorithm: str, metric: str) -> dict:
+    return COMPARISON["structural_policy"]["rms"][split][algorithm][metric]
 
 
-def test_reference_bundle_hashes_match_manifest() -> None:
-    for relative_path, expected_hash in MANIFEST["sha256"].items():
-        path = ROOT / relative_path
-        assert path.exists(), relative_path
-        assert sha256(path) == expected_hash
+def test_latest_result_bundle_is_complete() -> None:
+    for result_dir in (SUPERVISED, NO_SUPERVISION):
+        assert (result_dir / "protocol_manifest.json").is_file()
+        assert (result_dir / "aggregate.json").is_file()
+        for seed in (11, 22, 33, 44, 55):
+            result = result_dir / "seeds" / f"seed_{seed}" / "locked_results.json"
+            assert result.is_file()
 
 
-def test_displayed_reference_metrics_are_fixed() -> None:
-    evaluation = EXPECTED["evaluation"]
-    assert evaluation["checkpoint_step"] == 500
-    assert evaluation["num_graphs"] == 20
-    assert evaluation["rollout_mode"] == "teacher_forced"
-    assert evaluation["acc/bf_distance"] == 0.8187718391418457
-    assert evaluation["acc/bf_predecessor"] == 0.8206279873847961
-    assert evaluation["acc/bf_termination"] == 0.8092063069343567
-    assert evaluation["acc/bfs_state"] == 1.0
-    assert evaluation["acc/bfs_termination"] == 0.6316666603088379
+def test_ablation_protocol_is_matched() -> None:
+    assert COMPARISON["seeds"] == [11, 22, 33, 44, 55]
+    assert COMPARISON["num_seeds"] == 5
+    assert all(COMPARISON["protocol_checks"].values())
+    supervised = COMPARISON["treatments"]["supervised"]
+    no_supervision = COMPARISON["treatments"]["no_supervision"]
+    assert supervised["termination_supervision_weight"] == 1.0
+    assert supervised["termination_balance_loss"] is True
+    assert no_supervision["termination_supervision_weight"] == 0.0
+    assert no_supervision["termination_balance_loss"] is False
 
 
-def test_threshold_sweep_has_aligned_series() -> None:
-    sweep = EXPECTED["threshold_sweep"]
-    lengths = {
-        len(sweep["thresholds"]),
-        len(sweep["acc_bfs_termination"]),
-        len(sweep["acc_bf_termination"]),
+def test_readme_ablation_values_match_comparison() -> None:
+    expected = {
+        ("test_id", "bf"): (0.9052, 0.565),
+        ("test_id", "bfs"): (0.7971, 0.677),
+        ("test_ood", "bf"): (0.8793, 1.200),
+        ("test_ood", "bfs"): (0.5524, 1.866),
     }
-    assert lengths == {61}
-    assert sweep["thresholds"][0] == 74.0
-    assert sweep["thresholds"][-1] == 80.0
+    for (split, algorithm), (accuracy, mae) in expected.items():
+        actual_accuracy = _metric(split, algorithm, "balanced_accuracy")[
+            "no_supervision"
+        ]["mean"]
+        actual_mae = _metric(split, algorithm, "stopping_mae")["no_supervision"][
+            "mean"
+        ]
+        assert math.isclose(actual_accuracy, accuracy, abs_tol=5e-5)
+        assert math.isclose(actual_mae, mae, abs_tol=5e-4)
 
 
-def test_convergence_claim_preserves_changing_cohorts() -> None:
-    convergence = EXPECTED["latent_convergence"]
-    assert convergence["mean"][0] == 33.92076553961243
-    assert convergence["mean"][-1] == 2.43073770403862
-    assert all(
-        current > following
-        for current, following in zip(convergence["mean"], convergence["mean"][1:])
-    )
-    assert convergence["counts"][0] == 99.0
-    assert convergence["counts"][-1] == 4.0
-
-
-def test_unrecoverable_outputs_are_explicitly_archived() -> None:
-    archive_note = (
-        ROOT / "results/archive_historical_single_seed/README.md"
-    ).read_text()
-    assert "cannot be independently regenerated" in archive_note
-    assert "not verified results" in archive_note
-
-
-def test_displayed_figures_exist() -> None:
-    assert (ROOT / "figures/test_threshold_vs_termination_accuracy.png").is_file()
-    assert (ROOT / "figures/latent_convergence.png").is_file()
-
-
-def test_reference_records_use_portable_paths() -> None:
-    for path in (
-        ROOT / "results/reference/test_threshold_sweep.json",
-        ROOT / "results/reference/latent_convergence_stats.json",
-    ):
-        assert "/Users/" not in path.read_text()
+def test_latest_figures_exist() -> None:
+    assert (ROOT / "figures" / "latent_trajectory_pca.png").is_file()
+    assert (ROOT / "figures" / "locked_multiseed_summary.png").is_file()

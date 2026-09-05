@@ -54,14 +54,15 @@ def test_validation_selection_is_algorithm_local() -> None:
     assert step_metrics["stopping"]["mean_absolute_error"] == pytest.approx(0.5)
 
 
-def test_algorithm_specific_threshold_validation() -> None:
+def test_algorithm_specific_threshold_validation(tmp_path) -> None:
     config = ExperimentConfig()
     config.model.algorithms = ["bf", "bfs"]
     config.model.termination_distance = "rms"
     config.model.termination_distance_thresholds = {"bf": 0.2, "bfs": 0.3}
-    config.data.train_path = "artifacts/reference/data/test_20n_100g.npz"
-    config.data.val_path = "artifacts/reference/data/test_20n_100g.npz"
-    config.data.test_path = "artifacts/reference/data/test_200n_20g.npz"
+    paths = [tmp_path / f"{split}.npz" for split in ("train", "val", "test")]
+    for path in paths:
+        path.touch()
+    config.data.train_path, config.data.val_path, config.data.test_path = map(str, paths)
     validate_config(config)
 
     config.model.termination_distance_thresholds["prim"] = 0.4

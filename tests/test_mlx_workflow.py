@@ -32,9 +32,20 @@ def test_generated_dataset_is_seed_deterministic() -> None:
             assert np.array_equal(np.asarray(first_graph[key]), np.asarray(second_graph[key]))
 
 
-def test_legacy_loader_accepts_archives_without_prim_targets() -> None:
-    dataset = load_dataset("artifacts/reference/data/test_200n_20g.npz")
-    assert len(dataset) == 20
+def test_legacy_loader_accepts_archives_without_prim_targets(tmp_path) -> None:
+    path = tmp_path / "legacy.npz"
+    np.savez_compressed(
+        path,
+        num_graphs=1,
+        num_nodes_0=2,
+        edge_matrix_0=np.array([[0, 1], [1, 0], [1.0, 1.0]]),
+        source_node_0=0,
+        bf_distance_targets_0=np.zeros((1, 2)),
+        bf_predecessor_targets_0=np.zeros((1, 2), dtype=np.int32),
+        bfs_state_targets_0=np.zeros((1, 2)),
+    )
+    dataset = load_dataset(path)
+    assert len(dataset) == 1
     assert "bf_distance_targets" in dataset[0]
     assert "bfs_state_targets" in dataset[0]
     assert "prim_state_targets" not in dataset[0]

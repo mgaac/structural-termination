@@ -21,7 +21,7 @@ jobs:
           tests/test_published_results.py
           tests/test_locked_results.py
 
-  reproduce-reference:
+  mlx-workflow:
     runs-on: macos-14
     steps:
       - uses: actions/checkout@v6
@@ -31,5 +31,4 @@ jobs:
           cache: pip
       - run: python -m pip install -r requirements.txt
       - run: python -m pytest -q
-      - run: python -m src.reproduce reference
       - run: python -m src.reproduce smoke

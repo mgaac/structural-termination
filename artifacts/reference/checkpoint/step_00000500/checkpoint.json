@@ -1,9 +1,0 @@
-{
-  "step": 500,
-  "model_file": "model.safetensors",
-  "optimizer_file": "optimizer.safetensors",
-  "metadata": {
-    "epoch": 500,
-    "final": true
-  }
-}
